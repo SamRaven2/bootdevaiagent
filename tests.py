@@ -1,19 +1,14 @@
-from functions.get_files_info import get_files_info
+from functions.get_file_content import get_file_content
 
 def run_tests():
-    print("Running tests on \".\" as directory.")
-    print(get_files_info("calculator", ".") + "\n")
-
-    print("Running tests on \"pkg\" as directory.")
-    print(get_files_info("calculator", "pkg") + "\n") 
-
-    print("Running tests on \"/bin\" as directory.")
-    print(get_files_info("calculator", "/bin") + "\n")
-
-    print("Running tests on \"../\" as directory.")
-    print(get_files_info("calculator", "../") + "\n")
-
-    print(f"All tests complete")
+    print(f"Running test on \"main.py\"...")
+    print(get_file_content("calculator", "main.py") + "\n")
+    print(f"Running test on \"pkg/calculator.py\"...")
+    print(get_file_content("calculator", "pkg/calculator.py") + "\n")
+    print(f"Running test on \"/bin/cat\"...")
+    print(get_file_content("calculator", "/bin/cat") + "\n")
+    print(f"Running test on \"pkg/does_not_exist.py\"...")
+    print(get_file_content("calculator", "pkg/does_not_exist.py") + "\n")
 
 if __name__ == "__main__":
     run_tests()
